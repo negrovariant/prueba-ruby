@@ -22,8 +22,24 @@ end
 url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000'
 apikey = 'OaB2p8CyLCZsyR6ZU6bf1CTI7sm6ThOW2YMdAA8X'
 
-puts request(url,apikey)
+photos = request(url,apikey)
 
-def build_web_page()
+def build_web_page(pictures)
+    page = ""
+    page += "<html>"
+    page += "<head>"
+    page += "</head>"
+    page += "<html>"
+    page += "<ul>"
+    puts pictures
+    page += "</ul>"
+    page += "</body>"
+    page += "</html>"
+
 
 end
+
+
+build_web_page(photos)
+
+
