@@ -26,15 +26,18 @@ photos = request(url,apikey)
 
 def build_web_page(pictures)
     page = ""
-    page += "<html>"
-    page += "<head>"
-    page += "</head>"
-    page += "<html>"
-    page += "<ul>"
-    puts pictures
-    page += "</ul>"
-    page += "</body>"
-    page += "</html>"
+    page += "<html>\n"
+    page += "<head>\n"
+    page += "</head>\n"
+    page += "<html>\n"
+    page += "<ul>\n"
+    pictures['photos'].each do |photo|
+        page += "<img src='#{photo['img_src']}'/>\n"
+    end
+    page += "</ul>\n"
+    page += "</body>\n"
+    page += "</html>\n"
+    File.write('./index.html', page)
 
 
 end
